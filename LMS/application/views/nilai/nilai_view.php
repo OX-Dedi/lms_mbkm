@@ -29,7 +29,7 @@
                                 <?php foreach ($data_mahasiswa as $row) : ?>
                                     <tr>
                                         <td>
-                                            <a href="<?= site_url('Nilai/edit'. $row->IdMhsw) ?>" class="btn btn-success btn-sm"><i class="fa fa-edit"></i> </a>
+                                            <a href="<?= site_url('nilai/edit/'. $row->IdMhsw) ?>" class="btn btn-success btn-sm"><i class="fa fa-edit"></i> </a>
                                             <a href="javascript:void(0);" data="<?= $row->IdMhsw ?>" class="btn btn-danger btn-sm item-delete"><i class="fa fa-trash"></i> </a>
                                         </td>
                                         <td><?= $row->Nama ?></td>
@@ -83,7 +83,7 @@
                 type: 'ajax',
                 method: 'get',
                 async: false,
-                url: '<?php echo base_url() ?>Nilai/delete',
+                url: '<?php echo base_url() ?>nilai/delete/',
                 data: {
                     id: id
                 },

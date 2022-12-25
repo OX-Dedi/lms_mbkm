@@ -75,6 +75,7 @@ $route['Laporan'] = 'laporan/laporan_view';
 $route['Calendar']='calendar/calendar';
 $route['Nilai']='nilai/nilai_view';
 $route['Chart']='morris/trafficbar';
+$route['Users']='laporan/user_view';
 
 //Misc URL
 $route['block'] = 'err/block';

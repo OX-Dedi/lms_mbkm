@@ -36,14 +36,14 @@
     
             data.map( data =>{
                 chartX.push(data.nama)
-                chartY.push(data.course_view)
+                chartY.push(data.total)
             })
     
             const chartData = {
                 labels: chartX,
                 datasets: [
                     {
-                        label: 'course_view',
+                        label: 'total',
                         data: chartY,
                         backgroundColor: ['lightcoral'],
                         borderColor: ['lightcoral'],

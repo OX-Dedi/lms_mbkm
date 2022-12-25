@@ -7,7 +7,7 @@
     <title>Data Laporan</title>
     <link href="https://livedemo.mbahcoding.com/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://livedemo.mbahcoding.com/assets/datatables/css/dataTables.bootstrap.min.css" rel="stylesheet">
-    <link href="<?php echo base_url('assets/bootstrap1/css/bootstrap1.min.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/bootstrap1/css/bootstrap1.min.css')?> rel="stylesheet">
     <link href="<?php echo base_url('assets/datatables1/css/dataTables.bootstrap.min.css')?>" rel="stylesheet">
 
     </head> 
@@ -101,7 +101,7 @@ $(document).ready(function() {
         "order": [], 
 
         "ajax": {
-            "url": "<?php echo site_url('Laporan/ajax_list')?>",
+            "url": "<?php echo site_url('Laporan/ajax_list/')?>",
             "type": "POST",
             "data": function ( data ) {
                 data.activity = $('#activity').val();

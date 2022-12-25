@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 19, 2022 at 01:45 PM
+-- Generation Time: Dec 25, 2022 at 03:11 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -112,11 +112,8 @@ CREATE TABLE `calendar` (
 --
 
 INSERT INTO `calendar` (`id`, `title`, `description`, `color`, `start_date`, `end_date`, `create_at`, `create_by`, `modified_at`, `modified_by`) VALUES
-(68, 'Quiz', '', '#FF0000', '2022-12-08', '2022-12-09', '2022-12-18 18:15:59', NULL, NULL, NULL),
-(69, 'Quiz', '', '#FF0000', '2022-12-08', '2022-12-09', '2022-12-18 18:15:59', NULL, NULL, NULL),
-(70, 'UTS', '', '#FF8C00', '2022-12-14', '2022-12-21', '2022-12-18 18:16:28', NULL, NULL, NULL),
-(71, 'UTS', '', '#FF8C00', '2022-12-14', '2022-12-21', '2022-12-18 18:16:28', NULL, NULL, NULL),
-(72, 'UTS', '', '#FF8C00', '2022-12-14', '2022-12-21', '2022-12-18 18:16:28', NULL, NULL, NULL);
+(74, 'Jangan Nunggu Deadline ya :)', '', '#FF0000', '2022-12-22', '2022-12-23', '2022-12-22 08:01:46', NULL, '2022-12-22 08:04:24', NULL),
+(75, 'Pelantikan Ketua Ormawa', 'Pelantikan Birokrasi', '#0071c5', '2022-12-23', '2022-12-24', '2022-12-22 12:30:43', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -179,9 +176,7 @@ CREATE TABLE `db_absensi` (
 --
 
 INSERT INTO `db_absensi` (`id_absen`, `kode_absen`, `nama_pegawai`, `kode_pegawai`, `tgl_absen`, `jam_masuk`, `jam_pulang`, `status_pegawai`, `keterangan_absen`, `maps_absen`) VALUES
-(3, 'absen_20221214445', 'Dedi Rosadi', '20552011053', 'Selasa, 13 Desember 2022', '10:43:10', '19:36:31', 2, 'Belajar Di Kampus', '-6.9244532, 107.6622627'),
-(6, 'absen_20221239429', 'Dedi Rosadi', '973829271834', 'Minggu, 18 Desember 2022', '19:12:53', '', 2, 'Belajar Di Kampus', '-6.9174639, 107.6191228'),
-(7, 'absen_20221247447', 'Dedi Rosadi', '973829271834', 'Senin, 19 Desember 2022', '13:38:34', '', 2, 'Belajar Di Kampus', '-6.9788378, 107.6333816');
+(3, 'absen_20221214445', 'Dedi Rosadi', '20552011053', 'Selasa, 13 Desember 2022', '10:43:10', '19:36:31', 2, 'Belajar Di Kampus', '-6.9244532, 107.6622627');
 
 -- --------------------------------------------------------
 
@@ -260,7 +255,7 @@ INSERT INTO `tb_activity` (`activity`, `activity_1`, `activity_2`, `activity_3`,
 --
 
 CREATE TABLE `tb_faculty` (
-  `faculty_id` varchar(10) NOT NULL,
+  `faculty_id` varchar(20) NOT NULL,
   `nama_faculty` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -307,24 +302,23 @@ INSERT INTO `tb_jadwal` (`id`, `title`, `date`, `created`, `modified`, `status`)
 
 CREATE TABLE `tb_kelas` (
   `id` int(11) NOT NULL,
-  `faculty_id` varchar(10) NOT NULL,
-  `program_id` varchar(10) NOT NULL,
-  `semester_id` varchar(10) NOT NULL,
+  `faculty_id` varchar(20) NOT NULL,
+  `program_id` varchar(20) NOT NULL,
+  `semester_id` varchar(20) NOT NULL,
   `nama` varchar(25) NOT NULL,
-  `kelas` varchar(10) NOT NULL,
+  `kelas` varchar(20) NOT NULL,
   `activity` varchar(20) NOT NULL,
-  `total_activity` int(50) NOT NULL
+  `total` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tb_kelas`
 --
 
-INSERT INTO `tb_kelas` (`id`, `faculty_id`, `program_id`, `semester_id`, `nama`, `kelas`, `activity`, `total_activity`) VALUES
-(9, 'IF', 'PR1', 'AP1', 'DEDI ROSADI', '1-IF-A', '1', 5),
-(10, 'SI', 'PR2', 'AP2', 'ANNISA ADITSANIA', '1-IF-B', '2', 2),
-(15, 'CS', 'PR3', 'AP3', 'ANAK AGUNG GEDE', '1-IF-C', '3', 13),
-(20, 'MI', 'PR4', 'AP4', 'SITI NURJUBAEDAH', '4-IF-D', '4', 10);
+INSERT INTO `tb_kelas` (`id`, `faculty_id`, `program_id`, `semester_id`, `nama`, `kelas`, `activity`, `total`) VALUES
+(27, 'IF', 'PR2', 'S1', 'DEDI ROSADI', '1-IF-B', '4', '40'),
+(28, 'SI', 'PR1', 'S3', 'ANNISA ADITSANIA', '1-IF-C', '3', '30'),
+(29, 'CS', 'PR4', 'S4', 'ANAK AGUNG GEDE', '4-IF-D', '2', '20');
 
 -- --------------------------------------------------------
 
@@ -344,8 +338,9 @@ CREATE TABLE `tb_nilai` (
 --
 
 INSERT INTO `tb_nilai` (`IdMhsw`, `Nama`, `UTS`, `UAS`) VALUES
-(16, 'Sasa', '77', '77'),
-(17, 'dd', '12', '21');
+(16, 'Keamanan Jaringan', '97', '94'),
+(17, 'System Mikroprocessor', '98', '98'),
+(18, 'System Mikrokontroller', '96', '99');
 
 -- --------------------------------------------------------
 
@@ -354,10 +349,10 @@ INSERT INTO `tb_nilai` (`IdMhsw`, `Nama`, `UTS`, `UAS`) VALUES
 --
 
 CREATE TABLE `tb_prodi` (
-  `program_id` varchar(10) NOT NULL,
-  `faculty_id` varchar(10) NOT NULL,
+  `program_id` varchar(20) NOT NULL,
+  `faculty_id` varchar(20) NOT NULL,
   `nama` varchar(25) NOT NULL,
-  `kelas` varchar(10) NOT NULL
+  `kelas` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -377,7 +372,7 @@ INSERT INTO `tb_prodi` (`program_id`, `faculty_id`, `nama`, `kelas`) VALUES
 --
 
 CREATE TABLE `tb_semester` (
-  `semester_id` varchar(10) NOT NULL,
+  `semester_id` varchar(20) NOT NULL,
   `nama` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -386,11 +381,11 @@ CREATE TABLE `tb_semester` (
 --
 
 INSERT INTO `tb_semester` (`semester_id`, `nama`) VALUES
-('AP1', 'SEMESTER 1'),
-('AP2', 'SEMESTER 2'),
-('AP3', 'SEMESTER 3'),
-('AP4', 'SEMESTER 4'),
-('AP5', 'SEMESTER 5');
+('S1', 'SEMESTER 1'),
+('S2', 'SEMESTER 2'),
+('S3', 'SEMESTER 3'),
+('S4', 'SEMESTER 4'),
+('S5', 'SEMESTER 5');
 
 -- --------------------------------------------------------
 
@@ -457,8 +452,25 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_pegawai`, `nama_lengkap`, `username`, `password`, `role_id`, `umur`, `image`, `qr_code_image`, `kode_pegawai`, `instansi`, `jabatan`, `npwp`, `tgl_lahir`, `tempat_lahir`, `jenis_kelamin`, `bagian_shift`, `is_active`, `qr_code_use`, `last_login`, `date_created`) VALUES
-(12, 'Dedi Rosadi', 'admin', '$2y$10$nzEbq607iLUzhvlKWSmDOOLU7r8Y0GDnWxYxA45bF9ExcP.lvRykG', 1, 22, '3a402057537e1ea49401790aaf34d1d3.jpg', 'qr_code_20552011053.png', '973829271834', 'TELKOM UNIVERSITY', '20552011053', '2017', '2001-04-04', 'Subang', 'Laki - Laki', 1, 1, 1, 1671175607, 1670857167),
+(12, 'Dedi Rosadi', 'admin', '$2y$10$nzEbq607iLUzhvlKWSmDOOLU7r8Y0GDnWxYxA45bF9ExcP.lvRykG', 1, 22, '3a402057537e1ea49401790aaf34d1d3.jpg', 'qr_code_20552011053.png', '973829271834', 'TELKOM UNIVERSITY', '20552011053', '2017', '2001-04-04', 'Subang', 'Laki - Laki', 1, 1, 1, 1671781394, 1670857167),
 (47, 'Dedi Rosadi', 'dedi', '$2y$10$XRXong6z3evF2IG41qanPud4..ii8C/0rO/Ypr9f4MAGzS1qbNe6.', 2, 21, '24eba96bab2559d9b4fea156554f1bb1.png', 'qr_code_148296679305713.png', '148296679305713', 'TELKOM UNIVERSITY', '21552011076', '2020', '2001-04-04', 'Subang', 'Laki - Laki', 1, 1, 1, 0, 1671366109);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `faculty_id` varchar(20) NOT NULL,
+  `program_id` varchar(20) NOT NULL,
+  `semester_id` varchar(20) NOT NULL,
+  `nama` varchar(25) NOT NULL,
+  `kelas` varchar(20) NOT NULL,
+  `activity` varchar(20) NOT NULL,
+  `total` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Indexes for dumped tables
@@ -538,7 +550,7 @@ ALTER TABLE `tb_kelas`
   ADD UNIQUE KEY `faculty_id` (`faculty_id`),
   ADD UNIQUE KEY `nama` (`nama`),
   ADD UNIQUE KEY `kelas` (`kelas`),
-  ADD UNIQUE KEY `total_activity` (`total_activity`);
+  ADD UNIQUE KEY `total_activity` (`total`);
 
 --
 -- Indexes for table `tb_nilai`
@@ -575,6 +587,19 @@ ALTER TABLE `user`
   ADD PRIMARY KEY (`id_pegawai`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `faculty_id` (`faculty_id`),
+  ADD UNIQUE KEY `program_id` (`program_id`),
+  ADD UNIQUE KEY `semester_id` (`semester_id`),
+  ADD UNIQUE KEY `kelas` (`kelas`),
+  ADD UNIQUE KEY `nama` (`nama`),
+  ADD UNIQUE KEY `activity` (`activity`),
+  ADD UNIQUE KEY `total` (`total`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -588,7 +613,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `calendar`
 --
 ALTER TABLE `calendar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT for table `customers`
@@ -600,7 +625,7 @@ ALTER TABLE `customers`
 -- AUTO_INCREMENT for table `db_absensi`
 --
 ALTER TABLE `db_absensi`
-  MODIFY `id_absen` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_absen` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `db_rememberme`
@@ -618,13 +643,13 @@ ALTER TABLE `tb_jadwal`
 -- AUTO_INCREMENT for table `tb_kelas`
 --
 ALTER TABLE `tb_kelas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `tb_nilai`
 --
 ALTER TABLE `tb_nilai`
-  MODIFY `IdMhsw` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `IdMhsw` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `tb_supplier`
@@ -639,6 +664,12 @@ ALTER TABLE `user`
   MODIFY `id_pegawai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
 -- Constraints for dumped tables
 --
 
@@ -646,18 +677,18 @@ ALTER TABLE `user`
 -- Constraints for table `tb_kelas`
 --
 ALTER TABLE `tb_kelas`
-  ADD CONSTRAINT `tb_kelas_ibfk_1` FOREIGN KEY (`kelas`) REFERENCES `tb_prodi` (`kelas`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `tb_kelas_ibfk_3` FOREIGN KEY (`activity`) REFERENCES `tb_activity` (`activity`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `tb_kelas_ibfk_5` FOREIGN KEY (`semester_id`) REFERENCES `tb_semester` (`semester_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `tb_kelas_ibfk_6` FOREIGN KEY (`program_id`) REFERENCES `tb_prodi` (`program_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `tb_kelas_ibfk_7` FOREIGN KEY (`faculty_id`) REFERENCES `tb_prodi` (`faculty_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `tb_kelas_ibfk_8` FOREIGN KEY (`nama`) REFERENCES `tb_prodi` (`nama`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `tb_kelas_ibfk_1` FOREIGN KEY (`program_id`) REFERENCES `tb_prodi` (`program_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tb_kelas_ibfk_2` FOREIGN KEY (`semester_id`) REFERENCES `tb_semester` (`semester_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tb_kelas_ibfk_4` FOREIGN KEY (`kelas`) REFERENCES `tb_prodi` (`kelas`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tb_kelas_ibfk_5` FOREIGN KEY (`faculty_id`) REFERENCES `tb_prodi` (`faculty_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tb_kelas_ibfk_6` FOREIGN KEY (`activity`) REFERENCES `tb_activity` (`activity`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tb_kelas_ibfk_7` FOREIGN KEY (`nama`) REFERENCES `tb_prodi` (`nama`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `tb_prodi`
 --
 ALTER TABLE `tb_prodi`
-  ADD CONSTRAINT `tb_prodi_ibfk_1` FOREIGN KEY (`faculty_id`) REFERENCES `tb_faculty` (`faculty_id`);
+  ADD CONSTRAINT `tb_prodi_ibfk_1` FOREIGN KEY (`faculty_id`) REFERENCES `tb_faculty` (`faculty_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

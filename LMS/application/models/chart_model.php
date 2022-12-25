@@ -1,5 +1,5 @@
 <?php
-class chart_model extends CI_Model{
+class Chart_model extends CI_Model{
     public function __construct(){
         $this->load->database();
     }
@@ -7,7 +7,6 @@ class chart_model extends CI_Model{
     public function chart_database(){
         return $this->db->get('tb_kelas')->result();
     }
-    
     function siswa_model(){
         $hasil = $this->db->query("SELECT * FROM tb_supplier order by nama asc");
         return $hasil;

@@ -5,12 +5,23 @@ class Calendar extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		 is_logged_in();
+        $this->get_datasess = $this->db->get_where('user', ['username' =>
+        $this->session->userdata('username')])->row_array();
+        $this->load->model('M_Front');
+        $this->load->model('M_Admin');
+        $this->get_datasetupapp = $this->M_Front->fetchsetupapp();
 		$this->table 		= 'calendar';
 		$this->load->model('Globalmodel', 'modeldb'); 
 	}
 
 	public function index() 
 	{
+		$data = [
+            'title' => 'Chart',
+            'user' => $this->get_datasess,
+            'dataapp' => $this->get_datasetupapp
+        ];
 		$data_calendar = $this->modeldb->get_list($this->table);
 		$calendar = array();
 		foreach ($data_calendar as $key => $val) 
@@ -27,7 +38,9 @@ class Calendar extends CI_Controller {
 
 		$data = array();
 		$data['get_data']			= json_encode($calendar);
-		$this->load->view('calendar', $data);
+
+		$this->load->view('calendar/calendar', $data);
+
 	}
 
 	public function save()

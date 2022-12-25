@@ -1,21 +1,27 @@
 <!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
 <html lang="en">
+    <!--<![endif]-->
     <head>
-        <meta charset="utf-10" />
+        <meta charset="utf-8" />
+        <title>Agenda Perkuliahan</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url().'calendarassets/css/bootstrap.min.css'; ?>">
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url().'calendarassets/css/style.css'; ?>">
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url().'calendarassets/font-awesome/css/font-awesome.min.css'; ?>">
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url().'calendarassets/plugins/fullcalendar/fullcalendar.css'; ?>">
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url().'calendarassets/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css'; ?>">
+        <link rel="stylesheet" type="text/css" href="http://localhost/Tel-U/LMS/calendarassets/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="http://localhost/Tel-U/LMS/calendarassets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="http://localhost/Tel-U/LMS/calendarassets/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="http://localhost/Tel-U/LMS/calendarassets/plugins/fullcalendar/fullcalendar.css">
+        <link rel="stylesheet" type="text/css" href="http://localhost/Tel-U/LMS/calendarassets/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
     </head>
     <body>
     
-    <nav class="navbar navbar-default">
+    <nav class="navbar bg-danger">
       <div class="container-fluid">
+         
           <center>
-              <a href="http://localhost/codeigniter/">
+          <a href="http://localhost/codeigniter/">
                 <img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/0/03/Logo_Telkom_University_potrait.png" width="48" height="38">
               </a>
           </center>
@@ -36,8 +42,8 @@
                                 <div class="table-toolbar">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <div class="btn-group">
-                                                <a href="#" class="btn btn-primary add_calendar"> ADD NEW EVENT
+                                            <div class="btn-group ">
+                                                <a href="#" class="btn btn-danger btn-primary add_calendar"> ADD NEW EVENT
                                                     <i class="fa fa-plus"></i>
                                                 </a>
                                                 <br>
@@ -46,6 +52,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!-- place -->
                                 <div id="calendarIO"></div>
                                 <div class="modal fade" id="create_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                     <div class="modal-dialog" role="document">
@@ -56,7 +63,7 @@
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                       <span aria-hidden="true">&times;</span>
                                                     </button>
-                                                    <h4 class="modal-title" id="myModalLabel">Create calendar event</h4>
+                                                    <h4 class="modal-title" id="myModalLabel">Tambahkan Agenda</h4>
                                                 </div>
                                                 <div class="modal-body">
 
@@ -64,21 +71,21 @@
                                                          <div class="alert alert-danger" style="display: none;"></div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label class="control-label col-sm-2">Title  <span class="required"> * </span></label>
+                                                        <label class="control-label col-sm-2">Judul  <span class="required"> * </span></label>
                                                         <div class="col-sm-10">
                                                             <input type="text" name="title" class="form-control" placeholder="Title">
                                                         </div>
                                                     </div>
 
                                                     <div class="form-group">
-                                                        <label class="control-label col-sm-2">Description</label>
+                                                        <label class="control-label col-sm-2">Deskripsi</label>
                                                         <div class="col-sm-10">
                                                             <textarea name="description" rows="3" class="form-control"  placeholder="Enter description"></textarea>
                                                         </div>
                                                     </div>
 
                                                     <div class="form-group">
-                                                        <label for="color" class="col-sm-2 control-label">Color</label>
+                                                        <label for="color" class="col-sm-2 control-label">Warna</label>
                                                         <div class="col-sm-10">
                                                             <select name="color" class="form-control">
                                                                 <option value="">Choose</option>
@@ -94,7 +101,7 @@
                                                     </div>
 
                                                     <div class="form-group">
-                                                        <label class="control-label col-sm-2">Start Date</label>
+                                                        <label class="control-label col-sm-2">Tanggal Mulai</label>
                                                         <div class="col-sm-10">
                                                             <div class="input-group input-medium date date-picker" data-date-format="yyyy-mm-dd" data-date-viewmode="years">
                                                                 <input type="text" name="start_date" class="form-control" readonly>
@@ -104,7 +111,7 @@
                                                     </div>
 
                                                     <div class="form-group">
-                                                        <label class="control-label col-sm-2">End Date</label>
+                                                        <label class="control-label col-sm-2">Tanggal Berakhir</label>
                                                         <div class="col-sm-10">
                                                             <div class="input-group input-medium date date-picker" data-date-format="yyyy-mm-dd" data-date-viewmode="years">
                                                                 <input type="text" name="end_date" class="form-control" readonly>
@@ -123,7 +130,7 @@
                                         </div>
                                     </div>
                                 </div>
-                               
+                                <!-- end place -->
                             </div>
                         </div>
                         
@@ -132,11 +139,11 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="<?php echo base_url().'calendarassets/js/jquery.min.js'; ?>"></script>      
-    <script type="text/javascript" src="<?php echo base_url().'calendarassets/js/moment.min.js'; ?>"></script>      
-    <script type="text/javascript" src="<?php echo base_url().'calendarassets/js/bootstrap.min.js'; ?>"></script>      
-    <script type="text/javascript" src="<?php echo base_url().'calendarassets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js'; ?>"></script>      
-    <script type="text/javascript" src="<?php echo base_url().'calendarassets/plugins/fullcalendar/fullcalendar.js'; ?>"></script>      
+    <script type="text/javascript" src="http://localhost/Tel-U/LMS/calendarassets/js/jquery.min.js"></script>      
+    <script type="text/javascript" src="http://localhost/Tel-U/LMS/calendarassets/js/moment.min.js"></script>      
+    <script type="text/javascript" src="http://localhost/Tel-U/LMS/calendarassets/js/bootstrap.min.js"></script>      
+    <script type="text/javascript" src="http://localhost/Tel-U/LMS/calendarassets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>      
+    <script type="text/javascript" src="http://localhost/Tel-U/LMS/calendarassets/plugins/fullcalendar/fullcalendar.js"></script>      
     <script type="text/javascript">
         var get_data        = '<?php echo $get_data; ?>';
         var backend_url     = '<?php echo base_url(); ?>';
@@ -151,7 +158,7 @@
                 },
                 defaultDate: moment().format('YYYY-MM-DD'),
                 editable: true,
-                eventLimit: true,
+                eventLimit: true, // allow "more" link when too many events
                 selectable: true,
                 selectHelper: true,
                 select: function(start, end) {
@@ -161,10 +168,10 @@
                     save();
                     $('#calendarIO').fullCalendar('unselect');
                 },
-                eventDrop: function(event, delta, revertFunc) { 
+                eventDrop: function(event, delta, revertFunc) { // si changement de position
                     editDropResize(event);
                 },
-                eventResize: function(event,dayDelta,minuteDelta,revertFunc) { 
+                eventResize: function(event,dayDelta,minuteDelta,revertFunc) { // si changement de longueur
                     editDropResize(event);
                 },
                 eventClick: function(event, element)
@@ -187,7 +194,7 @@
             var element = $(this);
             var eventData;
             $.ajax({
-                url     : backend_url+'Admin/save',
+                url     : backend_url+'calendar/save',
                 type    : element.attr('method'),
                 data    : element.serialize(),
                 dataType: 'JSON',
@@ -242,7 +249,7 @@
             }
          
             $.ajax({
-                url     : backend_url+'Admin/save',
+                url     : backend_url+'calendar/save',
                 type    : 'POST',
                 data    : 'calendar_id='+event.id+'&title='+event.title+'&start_date='+start+'&end_date='+end,
                 dataType: 'JSON',
@@ -267,13 +274,14 @@
                 }         
             });
         }
+
         function save()
         {
             $('#form_create').submit(function(){
                 var element = $(this);
                 var eventData;
                 $.ajax({
-                    url     : backend_url+'Admin/save',
+                    url     : backend_url+'calendar/save',
                     type    : element.attr('method'),
                     data    : element.serialize(),
                     dataType: 'JSON',
@@ -334,7 +342,7 @@
                 var element = $(this);
                 var eventData;
                 $.ajax({
-                    url     : backend_url+'Admin/save',
+                    url     : backend_url+'calendar/save',
                     type    : element.attr('method'),
                     data    : element.serialize(),
                     dataType: 'JSON',
@@ -352,6 +360,7 @@
                             event.end           = moment($('#create_modal input[name=end_date]').val()).format('YYYY-MM-DD HH:mm:ss');
                             event.color         = $('#create_modal select[name=color]').val();
                             $('#calendarIO').fullCalendar('updateEvent', event);
+
                             $('#create_modal').modal('hide');
                             element[0].reset();
                             $('#create_modal input[name=calendar_id]').val(0)
@@ -379,7 +388,7 @@
         {
             $('#create_modal .delete_calendar').click(function(){
                 $.ajax({
-                    url     : backend_url+'Admin/delete',
+                    url     : backend_url+'calendar/delete',
                     type    : 'POST',
                     data    : 'id='+event.id,
                     dataType: 'JSON',

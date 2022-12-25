@@ -96,7 +96,7 @@
                                 <p>Waktu Pulang: <?= $jammasuk = (empty($dbabsensi['jam_pulang'])) ? '00:00:00' : $dbabsensi['jam_pulang']; ?></p>
                             </div>
                         </div>
-                        <button class="btn btn-dark" id="btn-absensi">Absen</button>
+                        <button class="btn btn-success" id="btn-absensi">Absen</button>
                     </div>
                 </div>
                 <div class="card-footer">
