@@ -74,7 +74,7 @@ class Docs extends CI_Controller
             $this->load->view('layout/header', $data);
             $this->load->view('layout/navbar', $data);
             $this->load->view('layout/sidebar', $data);
-            $this->load->view('admin/exportfile', $data);
+            $this->load->view('admin_oasis/exportfile', $data);
             $this->load->view('layout/footer', $data);
         } else {
             if (empty($this->input->post('nama_pegawai'))) {

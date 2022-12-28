@@ -146,7 +146,7 @@ class Admin extends CI_Controller
         $this->load->view('layout/header', $data);
         $this->load->view('layout/navbar', $data);
         $this->load->view('layout/sidebar', $data);
-        $this->load->view('admin/settingapp', $data);
+        $this->load->view('admin_oasis/settingapp', $data);
         $this->load->view('layout/footer', $data);
     }
 
@@ -164,7 +164,7 @@ class Admin extends CI_Controller
         $this->load->view('layout/header', $data);
         $this->load->view('layout/navbar', $data);
         $this->load->view('layout/sidebar', $data);
-        $this->load->view('admin/dashboard', $data);
+        $this->load->view('admin_oasis/dashboard', $data);
         $this->load->view('layout/footer', $data);
     }
 
@@ -180,7 +180,7 @@ class Admin extends CI_Controller
         $this->load->view('layout/header', $data);
         $this->load->view('layout/navbar', $data);
         $this->load->view('layout/sidebar', $data);
-        $this->load->view('admin/datapegawai', $data);
+        $this->load->view('admin_oasis/datapegawai', $data);
         $this->load->view('layout/footer', $data);
     }
 
@@ -195,7 +195,7 @@ class Admin extends CI_Controller
         $this->load->view('layout/header', $data);
         $this->load->view('layout/navbar', $data);
         $this->load->view('layout-e-learning/sidebar', $data);
-        $this->load->view('admin/absenpegawai', $data);
+        $this->load->view('admin_oasis/absenpegawai', $data);
         $this
         ->load->view('layout/footer', $data);
     }

@@ -17,7 +17,7 @@
 	<!-- Search filter -->
 	<div>
 		<!-- filter -->
-
+<br>
 		<select id='sel_program'>
 			<option value=''>-- Select program --</option>
 			<?php 

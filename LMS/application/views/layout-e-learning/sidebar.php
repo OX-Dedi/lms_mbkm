@@ -20,8 +20,12 @@
                         <a class="nav-link" href="<?= base_url('Calendar/index'); ?>">
                             <div class="sb-nav-link-icon"><span class="fas fa-calendar text-white"></span></div>
                             Agenda Perkuliahan
-                        </a>
-                        <div class="sb-sidenav-menu-heading text-white">Tautan Cepat</div>
+                        </a><div class="sb-sidenav-menu-heading text-white">Tautan Cepat</div>
+                        </a><a class="nav-link" href="<?= base_url('study/index'); ?>">
+                            <div class="sb-nav-link-icon"><span class="fas fa-cog text-white"></span></div>
+                            Tes  Course
+                          </a>        
+                          <div class="sb-sidenav-menu-heading text-white">Tautan Cepat</div>
                         </a><a class="nav-link" href="<?= base_url('home/index'); ?>">
                             <div class="sb-nav-link-icon"><span class="fas fa-cog text-white"></span></div>
                             Oasis
@@ -47,6 +51,10 @@
                         <a class="nav-link" href="<?= base_url('Calendar/index'); ?>">
                             <div class="sb-nav-link-icon"><span class="fas fa-calendar text-white"></span></div>
                             Agenda Perkuliahan
+                        </a> <div class="sb-sidenav-menu-heading text-white">COURSE</div>
+                        <a class="nav-link" href="http://localhost/Tel-U/E-learning/">
+                            <div class="sb-nav-link-icon text-white"><span class="fas fa-course text-white"></span></div>
+                            Tes Course
                         </a>
                         <div class="sb-sidenav-menu-heading text-white">Tautan Cepat</div>
                         </a><a class="nav-link" href="<?= base_url('home/index'); ?>">
